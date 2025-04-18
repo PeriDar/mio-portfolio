@@ -1,0 +1,402 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
+
+/* ---------- PALETTE DARK (ispirata all’immagine) ---------- */
+@theme {
+  --bg-page: #0d1526; /* navy molto scuro */
+  --bg-card: #10162c; /* rettangolo markdown */
+  --text-body: #cdd4e0; /* testo principale */
+  --text-heading: #ffffff; /* heading H1/H2 bianchissimo */
+  --text-link: #79e0ff; /* link azzurro chiaro */
+  --text-strong: #ffffff; /* bold bianco     */
+  --text-quote: #9db4ff; /* citazione blu   */
+  --code-fg: #e5e7eb; /* testo nel code‑block  */
+  --code-bg: #0d1117; /* sfondo code‑block     */
+}
+
+/* ---------- BACKGROUND PAGINA ---------- */
+@layer base {
+  body {
+    background-color: var(--bg-card);
+    color: var(--text-body);
+    font-family: "Inter", sans-serif;
+  }
+}
+
+/* ---------- PROSE (markdown) ---------- */
+@layer components {
+  .prose-dark {
+    @apply prose mx-auto prose-lg leading-relaxed;
+    max-width: 75ch;
+    background-color: var(--bg-card);
+    padding: 2rem 2.5rem;
+    border-radius: 1.25rem;
+    /* box-shadow: 0 6px 18px 0 rgb(0 0 0 / 0.55); */
+
+    /* Token Typography */
+    --tw-prose-body: var(--text-body);
+    --tw-prose-headings: var(--text-heading);
+    --tw-prose-bold: var(--text-strong);
+    --tw-prose-links: var(--text-link);
+    --tw-prose-bullets: var(--text-link);
+    --tw-prose-quotes: var(--text-quote);
+
+    /* Titoli molto marcati e con spaziatura simile all’esempio */
+    h1,
+    h2 {
+      @apply font-extrabold tracking-tight;
+      line-height: 1.15;
+    }
+    h1 {
+      font-size: 2.125rem;
+    } /* ~34px */
+    h2 {
+      font-size: 1.625rem;
+    } /* ~26px */
+
+    /* Paragrafi leggermente più ampi */
+    p {
+      margin-top: 1.15em;
+      margin-bottom: 1.15em;
+    }
+
+    /* Link con sottolineatura appena accennata */
+    a {
+      text-decoration-color: rgba(121, 224, 255, 0.3);
+      text-underline-offset: 2px;
+      transition: color 0.15s;
+    }
+    a:hover {
+      color: #a4f1ff;
+    }
+
+    /* Inline code */
+    code {
+      color: var(--code-fg);
+      background-color: rgb(255 255 255 / 0.06);
+      padding: 0.2em 0.45em;
+      border-radius: 0.3rem;
+      font-size: 0.925em;
+    }
+
+    /* Code block */
+    pre {
+      background-color: var(--code-bg);
+      color: var(--code-fg);
+      /* padding: 1.2rem 1.5rem; */
+      /* border-radius: 0.75rem; */
+      overflow-x: auto;
+      /* margin-top: 1.5em; */
+      /* margin-bottom: 1.5em; */
+    }
+    pre code {
+      background-color: transparent;
+      padding: 0;
+    }
+
+    /* Citazioni */
+    blockquote {
+      border-left: 3px solid var(--text-quote);
+      padding-left: 1em;
+      font-style: italic;
+      color: var(--text-quote);
+    }
+
+    img {
+      display: block;
+      margin: auto;
+      border-radius: 0.3rem;
+    }
+  }
+}
+
+@theme inline {
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+/* ----------------------------------------------------------------
+   global.css  –  Tailwind v4 CSS‑first configuration
+---------------------------------------------------------------- */
+
+/*---------------------------------------------------------------
+  1.  Design tokens —> @theme
+----------------------------------------------------------------*/
+@theme {
+  /* —— Breakpoints / container  —— */
+  --breakpoint-2xl: 1400px;
+
+  /* —— Palette personalizzata  —— */
+  /* ⚫ Neri */
+  --color-black: #000;
+  --color-black-100: #000319;
+  --color-black-200: rgba(17, 25, 40, 0.75);
+  --color-black-300: rgba(255, 255, 255, 0.125);
+
+  /* ⚪ Bianchi */
+  --color-white: #fff;
+  --color-white-100: #bec1dd;
+  --color-white-200: #c1c2d3;
+
+  /* 🔵 Blu & 🟣 Viola */
+  --color-blue-100: #e4ecff;
+  --color-purple: #cbacf9;
+
+  /* —— Semantic aliases prese dal tuo design‑system  —— */
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  /* —— Border‑radius —— */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* —— Animation tokens —— */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-first: moveVertical 30s ease infinite;
+  --animate-second: moveInCircle 20s reverse infinite;
+  --animate-third: moveInCircle 40s linear infinite;
+  --animate-fourth: moveHorizontal 40s ease infinite;
+  --animate-fifth: moveInCircle 20s ease infinite;
+  --animate-scroll: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
+
+  /* —— Keyframes (se definiti dentro @theme vengono tree‑shaken) —— */
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  }
+  @keyframes shimmer {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+  @keyframes moveHorizontal {
+    0% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+    50% {
+      transform: translateX(50%) translateY(10%);
+    }
+    100% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+  }
+  @keyframes moveInCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes moveVertical {
+    0% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+} /* /@theme */
+/* le modalità di definizione delle animazioni dentro @theme
+   sono mostrate nella documentazione ufficiale :contentReference[oaicite:0]{index=0} */
+
+/*---------------------------------------------------------------
+  2.  Container: centrato + padding orizzontale
+----------------------------------------------------------------*/
+@layer components {
+  .container {
+    width: 100%;
+    margin-inline: auto; /* centering */
+    padding-inline: 2rem; /* = 32 px */
+  }
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 1400px;
+    }
+  }
+}
+
+/*---------------------------------------------------------------
+  3.  Utility per pattern SVG (usa currentColor → si colora con text-*)
+----------------------------------------------------------------*/
+@layer utilities {
+  .bg-grid {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='currentColor'><path d='M0 .5H31.5V32'/></svg>");
+  }
+  .bg-grid-small {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='currentColor' width='8' height='8'><path d='M0 .5H31.5V32'/></svg>");
+  }
+  .bg-dot {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'><circle fill='currentColor' cx='10' cy='10' r='1.625'/></svg>");
+  }
+}
+
+/*---------------------------------------------------------------
+  4.  Dark‑mode a classi (opzionale, se ti serve il vecchio behaviour)
+----------------------------------------------------------------*/
+/* Tailwind v4 usa `prefers‑color‑scheme` di default.
+   Se vuoi la classe `.dark` replica la config precedente così: */
+@custom-variant dark ".dark &"; /* attiva `dark:` con la classe .dark */
+
+/* Fatto! Ora hai l’equivalente di un vecchio tailwind.config.js
+   interamente in CSS, senza bisogno del file JS. */
+/* ---------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------- */
+/* GLOBAL CSS IMPORTATO */
+/* ---------------------------------------------------------------- */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border !scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button {
+    @apply active:outline-none;
+  }
+}
+
+@layer utilities {
+  .heading {
+    @apply font-bold text-4xl md:text-5xl text-center;
+  }
+
+  .black-gradient {
+    background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
+  }
+}

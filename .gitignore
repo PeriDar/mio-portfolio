@@ -1,0 +1,55 @@
+# --------------------- BASE NODE / YARN / NPM ---------------------
+node_modules/
+.pnp/
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# --------------------- BUILD / CACHE ------------------------------
+.next/
+out/
+.tailwind/
+.eslintcache
+.turbo/
+.cache/
+dist/
+lib/
+
+# --------------------- TEST ---------------------------------------
+coverage/
+
+# --------------------- ENV / CONFIG -------------------------------
+.env*
+.env.*.local
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+
+# --------------------- LOGS ---------------------------------------
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# --------------------- OS / EDITOR -------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+
+# --------------------- MISC KEY / CERT ----------------------------
+*.pem
+
+# --------------------- NOTEBOOKS / R  -----------------------------
+.ipynb_checkpoints/
+*.utf8.md
+*.knit.md
+*.Rproj
+.Rhistory
+.RData
+.Ruserdata
+
