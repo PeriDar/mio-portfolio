@@ -46,14 +46,14 @@ const Hero = () => {
             words="Data Science Meets Economics & Deep Learning"
           />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            I'm passionate about Econometrics, statistics, applied Machine
-            Learning and Deep Learning. I build insights from data using Python,
-            R, and Jupyter.
+            I'm passionate about Statistics, Machine Learning and Deep Learning.
+            I build insights from data using Python, R and Power BI
           </p>
 
-          <a href="#about">
-            <MagicButton />
-          </a>
+          <MagicButton
+            href="/CV_Dario_Perico.pdf" // percorso relativo a /public
+            filename="CV_Dario_Perico.pdf"
+          />
         </div>
       </div>
     </div>

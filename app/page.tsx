@@ -28,26 +28,6 @@ export default function Home() {
           Vai al progetto "Testing Strategies"
         </Link>
       </div>
-      <div className="relative flex flex-col items-center">
-        <h1 className="text-3xl font-bold">Benvenuto nel mio portfolio</h1>
-        <p className="mt-4">Ecco un progetto disponibile:</p>
-        <Link
-          href="/projects/testing-strategies"
-          className="text-blue-600 underline"
-        >
-          Vai al progetto "Testing Strategies"
-        </Link>
-      </div>
-      <div className="relative flex flex-col items-center">
-        <h1 className="text-3xl font-bold">Benvenuto nel mio portfolio</h1>
-        <p className="mt-4">Ecco un progetto disponibile:</p>
-        <Link
-          href="/projects/testing-strategies"
-          className="text-blue-600 underline"
-        >
-          Vai al progetto "Testing Strategies"
-        </Link>
-      </div>
     </main>
   );
 }
