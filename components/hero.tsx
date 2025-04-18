@@ -39,14 +39,16 @@ const Hero = () => {
             className="uppercase tracking-widest text-xs
           text-center text-blue-100 max-w-80"
           >
-            Dynamic web magic
+            Hi, i&apos;m Dario, A Data Science student based in Italy
           </h2>
           <TextGenerateEffect
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
-            words="Trasforming concept into Seamless Experiences"
+            words="Data Science Meets Economics & Deep Learning"
           />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi, i&apos;m Dario, A Data Scientist based in Italy
+            I'm passionate about Econometrics, statistics, applied Machine
+            Learning and Deep Learning. I build insights from data using Python,
+            R, and Jupyter.
           </p>
 
           <a href="#about">
