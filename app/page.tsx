@@ -3,6 +3,7 @@ import Link from "next/link";
 import Hero from "@/components/hero";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { FaHome } from "react-icons/fa";
+import Grid from "@/components/grid";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
           navItems={[{ name: "Home", link: "/", icon: <FaHome /> }]}
         />
         <Hero />
+        <Grid />
       </div>
 
       {/* Codice per aggiungere peogetti */}

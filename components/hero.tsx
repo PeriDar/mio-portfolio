@@ -5,7 +5,7 @@ import MagicButton from "./ui/magic-button";
 
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36">
+    <div className="pb-20 pt-20">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -46,8 +46,8 @@ const Hero = () => {
             words="Data Science Meets Economics & Deep Learning"
           />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            I'm passionate about Statistics, Machine Learning and Deep Learning.
-            I build insights from data using Python, R and Power BI
+            My passion is to solve real-world problems using Python, R, and
+            statistical modeling.
           </p>
 
           <MagicButton
