@@ -2,22 +2,49 @@ import { div, p, section, span } from "motion/react-client";
 import React from "react";
 import GridItem from "./grid-item";
 import { FaGraduationCap } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdWavingHand } from "react-icons/md";
+import { FaGear } from "react-icons/fa6";
 
 const Grid = () => {
   return (
     <section id="about">
-      <h2 className="text-center font-bold md:tracking-wider mb-10 text-sm md:text-lg lg:text-5xl">
+      <h2 className="text-center font-bold md:tracking-wider mb-10 text-5xl lg:text-6xl xl:text-6xl">
         About Me
       </h2>
       <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
         <GridItem
-          area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/9]"
-          title="Hi, I'm Dario Perico"
-          description="I'm currently pursuing my Master's Degree in Data Science, combining my passions for econometrics, macroeconomics, and Bayesian statistics to uncover insights hidden in data. I love transforming complex problems into clear, actionable solutions."
+          area="md:[grid-area:1/1/2/13] xl:[grid-area:1/1/2/9]"
+          img="/images/stock_terminal.jpg"
+          title={
+            <>
+              <span>
+                Hi, I'm Dario Perico{" "}
+                <MdWavingHand className="float-start mr-2 mt-1" />
+              </span>
+            </>
+          }
+          description={
+            <>
+              <span>
+                I’m currently pursuing a Master’s in Data Science, focusing on
+                the intersection of economics, statistics, and modern machine
+                learning.
+              </span>
+              <br />
+              <br />
+              <span>
+                I’m especially drawn to projects where I can combine analytical
+                thinking with real-world impact — from understanding financial
+                systems to building predictive models with Python and R.
+              </span>
+            </>
+          }
         />
 
         <GridItem
-          area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
+          area="md:[grid-area:2/1/3/7] xl:[grid-area:2/1/3/6]"
+          img="/images/bg-gradient-purple-azure.jpg"
           title={
             <>
               <span>
@@ -41,15 +68,38 @@ const Grid = () => {
           }
         />
         <GridItem
+          img="/images/bg-globe-gradient.png"
           area="md:[grid-area:2/7/3/13] xl:[grid-area:1/9/2/13]"
-          title="This card is also built by Cursor"
-          description="I'm not even kidding. Ask my mom if you don't believe me."
+          title={
+            <>
+              <span>
+                Location <FaLocationDot className="float-start mr-2 mt-1" />
+              </span>
+            </>
+          }
+          description={
+            <>
+              <span className="font-bold">Based near Milan, Italy</span>
+              <br />
+              <span>
+                Open to remote and on-site opportunities, with an international
+                outlook.
+              </span>
+            </>
+          }
         />
         <GridItem
-          img="/images/stock_terminal.jpg"
-          area="md:[grid-area:3/1/4/13] xl:[grid-area:2/5/3/13]"
-          title="Coming soon on Aceternity UI"
-          description="I'm writing the code as I record this, no shit."
+          area="md:[grid-area:3/1/4/13] xl:[grid-area:2/6/3/13]"
+          img="/images/bg-tech.jpg"
+          title={
+            <>
+              <span>
+                Tech Stack Highlights{" "}
+                <FaGear className="float-start mr-2 mt-1" />
+              </span>
+            </>
+          }
+          description="I work mainly with Python, R and SQL, using tools like Jupyter, Git, and Tableau; powered by libraries such as Pandas, Scikit-learn, and the tidyverse."
         />
       </ul>
     </section>
