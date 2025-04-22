@@ -400,3 +400,17 @@
     background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
   }
 }
+
+/* ultima aggiunta */
+@theme inline {
+  --animate-move: move 5s linear infinite;
+
+  @keyframes move {
+    0% {
+      transform: translateX(-200px);
+    }
+    100% {
+      transform: translateX(200px);
+    }
+  }
+}

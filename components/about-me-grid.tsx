@@ -8,7 +8,7 @@ import { FaGear } from "react-icons/fa6";
 
 const Grid = () => {
   return (
-    <section id="about">
+    <section id="about" className="min-h-screen p-15">
       <h2 className="text-center font-bold md:tracking-wider mb-10 text-5xl lg:text-6xl xl:text-6xl">
         About Me
       </h2>

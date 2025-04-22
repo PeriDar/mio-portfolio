@@ -3,7 +3,8 @@ import Link from "next/link";
 import Hero from "@/components/hero";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { FaHome } from "react-icons/fa";
-import Grid from "@/components/grid";
+import Grid from "@/components/about-me-grid";
+import TechStack from "@/components/tech-stack";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         />
         <Hero />
         <Grid />
+        <TechStack />
       </div>
 
       {/* Codice per aggiungere peogetti */}
