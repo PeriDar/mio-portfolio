@@ -67,8 +67,8 @@ export const FloatingNav: React.FC<{
                 "hover:text-neutral-500 dark:hover:text-blue-300"
               )}
             >
-              <span className="block sm:hidden">{navItem.icon}</span>
-              <span className="hidden sm:block text-base">{navItem.name}</span>
+              <span className="block ">{navItem.icon}</span>
+              <span className="block text-base">{navItem.name}</span>
             </a>
           ))}
         </motion.div>
